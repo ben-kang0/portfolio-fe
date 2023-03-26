@@ -44,6 +44,7 @@ $(document).ready(function()
             success: function (data, status, xhr)
             {
                 console.log(data);
+                console.log('data');
             }
         }
         );
