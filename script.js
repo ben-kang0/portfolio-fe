@@ -36,4 +36,17 @@ $(document).ready(function()
         );
     });
 
+    // Send button 
+    $("#sendBtn").click(function() 
+    {
+        $.ajax("https://portfolio-back-three.vercel.app/api",
+        {
+            success: function (data, status, xhr)
+            {
+                console.log(data);
+            }
+        }
+        );
+    })
+
 });
