@@ -39,15 +39,27 @@ $(document).ready(function()
     // Send button 
     $("#sendBtn").click(function() 
     {
-        $.ajax("https://portfolio-back-three.vercel.app/api",
-        {
-            success: function (data, status, xhr)
-            {
-                console.log(data);
-                console.log('data');
-            }
+        var host = "https://portfolio-back-three.vercel.app";
+        var localHost = "http://localhost:3000";
+        var sendObject = {
+            name: $("#inputName").val(),
+            email: $("#inputEmail").val(),
+            project: $("#inputProject").val(),
+            message: $("#inputMessage").val()
         }
-        );
+
+        $.ajax({
+            type:"POST",
+            url:localHost + "/api/inquiry",
+            data: JSON.stringify(sendObject),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8"
+        })
+        
+
+     
+   
     })
+    
 
 });
