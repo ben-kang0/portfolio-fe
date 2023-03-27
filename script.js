@@ -50,15 +50,12 @@ $(document).ready(function()
 
         $.ajax({
             type:"POST",
-            url:localHost + "/api/inquiry",
+            url:host + "/api/inquiry",
             data: JSON.stringify(sendObject),
             dataType: "json",
             contentType: "application/json; charset=utf-8"
         })
         
-
-     
-   
     })
     
 
